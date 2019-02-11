@@ -1,11 +1,13 @@
 # word-frequency-basic
 
-## Install
+[![NPM](https://nodei.co/npm/word-frequency-basic.png)](https://nodei.co/npm/word-frequency-basic/)
+
+### Install
 ``
 npm i word-frequency-basic
 ``
 
-## Usage
+### Usage
 
 ```js
 const { numberToWordsLog, numberToWords} = require("word-frequency-basic");
@@ -17,7 +19,7 @@ numberToWordsLog("Hello, this is a essay. This package is simple and easy to use
 console.log(numberToWords("Hello, this is a essay. This package is simple and easy to use. Good work."));
 ```
 
-## Output
+### Output
 
 ```js
 { 'Hello, ': 1,
