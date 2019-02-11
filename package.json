@@ -1,0 +1,25 @@
+{
+  "name": "word-frequency-basic",
+  "version": "0.0.1",
+  "description": "Finds how many identical words in a text.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadiraydinli/word-frequency-basic.git"
+  },
+  "keywords": [
+    "word",
+    "basic",
+    "text",
+    "frequency"
+  ],
+  "author": "Kadir Aydinli <kadiraydinli.4@gmail.com> (https://github.com/kadiraydinli/numberOfWords)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kadiraydinli/word-frequency-basic/issues"
+  },
+  "homepage": "https://github.com/kadiraydinli/word-frequency-basic#readme"
+}
