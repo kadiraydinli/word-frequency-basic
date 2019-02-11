@@ -2,6 +2,8 @@
 
 [![NPM](https://nodei.co/npm/word-frequency-basic.png)](https://nodei.co/npm/word-frequency-basic/)
 
+Finds how many identical words in a text.
+
 ### Install
 ``
 npm i word-frequency-basic
