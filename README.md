@@ -2,40 +2,94 @@
 
 [![NPM](https://nodei.co/npm/word-frequency-basic.png)](https://nodei.co/npm/word-frequency-basic/)
 
-Finds how many identical words in a text.
+Single function code block for finding the number of repeating words in a text.
 
 ### Install
-``
+```bash
+yarn add word-frequency-basic
+```
+
+or
+```bash
 npm i word-frequency-basic
-``
+```
 
 ### Usage
 
+| Parameters | Type | Default | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| text | string | null | The text to be split into words |
+| caseSensitive | boolean | true | Allows you to count by paying attention to whether the letters are big or small. |
+| letter | "normal" / "upperCase" / "lowerCase" | "normal" | Words can be output in uppercase, lowercase or normal letters. |
+| noPunctuation | boolean | true | Determines whether to remove punctuation marks. |
+
 ```js
-const { numberToWordsLog, numberToWords} = require("word-frequency-basic");
+import numberOfWords from "word-frequency-basic"
 
-//Receiving as rotating output
-numberToWordsLog("Hello, this is a essay. This package is simple and easy to use. Good work.");
-
-//Receiving as rotating output
-console.log(numberToWords("Hello, this is a essay. This package is simple and easy to use. Good work."));
+numberOfWords(text, caseSensitive, letter, noPunctuation)
 ```
 
-### Output
+### Examples
 
 ```js
-{ 'Hello, ': 1,
-  'this ': 1,
-  'is ': 2,
-  'a ': 1,
-  'essay. ': 1,
-  'This ': 1,
-  'package ': 1,
-  'simple ': 1,
-  'and ': 1,
-  'easy ': 1,
-  'to ': 1,
-  'use. ': 1,
-  'Good ': 1,
-  'work. ': 1 }
+import numberOfWords from "word-frequency-basic"
+
+const text = "Hello world, count my words, hello again."
+
+// Example 1
+console.log(numberOfWords(text))
+
+/* Output 1
+{
+  "Hello": 1,
+  "world": 1,
+  "count": 1,
+  "my": 1,
+  "words": 1,
+  "hello": 1,
+  "again": 1
+}
+*/
+
+// Example 2
+console.log(numberOfWords(text, false))
+
+/* Output 2
+{
+  "hello": 2,
+  "world": 1,
+  "count": 1,
+  "my": 1,
+  "words": 1,
+  "again": 1
+}
+*/
+
+// Example 3
+console.log(numberOfWords(text, true, "upperCase"))
+
+/* Output 3
+{
+  "HELLO": 1,
+  "WORLD": 1,
+  "COUNT": 1,
+  "MY": 1,
+  "WORDS": 1,
+  "AGAIN": 1
+}
+*/
+
+// Example 4
+console.log(numberOfWords(text, true, "normal", false))
+
+/* Output 4
+{
+  "hello": 1,
+  "world,": 1,
+  "count": 1,
+  "my": 1,
+  "words,": 1,
+  "again.": 1
+}
+*/
 ```

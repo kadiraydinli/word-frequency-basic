@@ -1,24 +1,28 @@
-function factory(text) {
-    var array = text.split(" ");
-    var again = 0;
-    var output = {};
+export default function numberOfWords(text, caseSensitive = true, letter = "normal" | "upperCase" | "lowerCase", noPunctuation = true) {
+  let _text = text
+  if (noPunctuation) {
+    _text = text.replace(/[.,\/#!$%\^&\*;:{}=\-+_`~()]/g,"")
+  }
 
-    for (var i = 0; i < array.length; i++) {
-        for (var k = 0; k < array.length; k++) {
-            if (array[i] == array[k]) {
-                again++;
-            }
-        }
-        output[array[i] + " "] = again;
-        again = 0;
-    }
-    return output;
-}
+  const words = _text.split(" ")
 
-module.exports.numberToWords = (text) => {
-    return factory(text);
-}
+  let again = 0
+  let output = { }
 
-module.exports.numberToWordsLog = (text) => {
-    console.log(factory(text));
+  function convert(word) {
+    return letter ? 
+      letter === "upperCase" ? word.toUpperCase() : word.toLowerCase() : 
+      caseSensitive ? word : word.toLowerCase()
+  }
+
+  for (let i = 0; i < words.length; i++) {
+      if (words[i] !== "") {
+          for (let k = 0; k < words.length; k++) {
+              if (words[i] === words[k] || (!caseSensitive && words[i].toLowerCase() === words[k].toLowerCase()))  again++
+          }
+          output[convert(words[i])] = again
+          again = 0
+      }
+  }
+  return output
 }
